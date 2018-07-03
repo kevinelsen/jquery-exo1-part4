@@ -15,26 +15,43 @@
   </form>
   <script src="jquery-3.2.1.js"></script>
   <script>
+  var counter = 0;
+  var victory = 0;
+  var defeat = 0;
+  var equality = 0;
   $('#shifumi').click(function(){
+    counter++;
     var tableau = ['pierre', 'feuille', 'ciseaux'];
     var ai = Math.floor(Math.random() * 2);
     var userChoice = parseInt($('#Shifumi option:selected').val());
     if (userChoice == ai) {
+      equality++;
+      alert('Machine a choisi ' + tableau[ai]);
       alert('NUL !');
 
     }
     else if (userChoice == 1 && ai == 0){
+      victory++;
+      alert('Machine a choisi ' + tableau[ai]);
       alert('Gagner !');
     }
     else if (userChoice == 2 && ai == 1){
+      victory++;
+      alert('Machine a choisi ' + tableau[ai]);
       alert('Gagner !');
     }
     else if (userChoice == 0 && ai == 2){
+      victory++;
+      alert('Machine a choisi ' + tableau[ai]);
       alert('Gagner !');
     }
     else {
+      defeat++;
+      alert('Machine a choisi ' + tableau[ai]);
       alert('Perdu !');
     }
+    var calcul = (victory / counter) * 100;
+    alert('Vous avez gagné ' + calcul + '% des parties.');
   });
   console.log($('#Shifumi option:selected').val());
 
