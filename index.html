@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Shifumi</title>
+</head>
+<body>
+  <form>
+    <select name="Shifumi" id="Shifumi">
+      <option value="0" id="pierre">Pierre</option>
+      <option value="1" id="feuille">Feuille</option>
+      <option value="2" id="ciseaux">Ciseau</option>
+    </select>
+    <button type="button" name="button" onclick="shifumi" id="shifumi">Shifumi!</button>
+  </form>
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+  $('#shifumi').click(function(){
+    var tableau = ['pierre', 'feuille', 'ciseaux'];
+    var ai = Math.floor(Math.random() * 2);
+    var userChoice = parseInt($('#Shifumi option:selected').val());
+    if (userChoice == ai) {
+      alert('NUL !');
+
+    }
+    else if (userChoice == 1 && ai == 0){
+      alert('Gagner !');
+    }
+    else if (userChoice == 2 && ai == 1){
+      alert('Gagner !');
+    }
+    else if (userChoice == 0 && ai == 2){
+      alert('Gagner !');
+    }
+    else {
+      alert('Perdu !');
+    }
+  });
+  console.log($('#Shifumi option:selected').val());
+
+  </script>
+</body>
+</html>
